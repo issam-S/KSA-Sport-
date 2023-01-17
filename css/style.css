@@ -1,0 +1,367 @@
+
+  @import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+
+body {
+  --main-color: #c62127;
+  direction: rtl;
+  padding: 0;
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+/* 
+/*/
+.scaling-squares-spinner,
+.scaling-squares-spinner * {
+  box-sizing: border-box;
+}
+.loader-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 55;
+}
+.scaling-squares-spinner {
+  height: 65px;
+  width: 65px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  animation: scaling-squares-animation 1250ms;
+  animation-iteration-count: infinite;
+  transform: rotate(0deg);
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+
+.scaling-squares-spinner .square {
+  height: calc(65px * 0.25 / 1.3);
+  width: calc(65px * 0.25 / 1.3);
+  margin-right: auto;
+  margin-left: auto;
+  border: calc(65px * 0.04 / 1.3) solid #ff1d5e;
+  position: absolute;
+  animation-duration: 1250ms;
+  animation-iteration-count: infinite;
+}
+
+.scaling-squares-spinner .square:nth-child(1) {
+  animation-name: scaling-squares-spinner-animation-child-1;
+}
+
+.scaling-squares-spinner .square:nth-child(2) {
+  animation-name: scaling-squares-spinner-animation-child-2;
+}
+
+.scaling-squares-spinner .square:nth-child(3) {
+  animation-name: scaling-squares-spinner-animation-child-3;
+}
+
+.scaling-squares-spinner .square:nth-child(4) {
+  animation-name: scaling-squares-spinner-animation-child-4;
+}
+
+@keyframes scaling-squares-animation {
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes scaling-squares-spinner-animation-child-1 {
+  50% {
+    transform: translate(150%, 150%) scale(2, 2);
+  }
+}
+
+@keyframes scaling-squares-spinner-animation-child-2 {
+  50% {
+    transform: translate(-150%, 150%) scale(2, 2);
+  }
+}
+
+@keyframes scaling-squares-spinner-animation-child-3 {
+  50% {
+    transform: translate(-150%, -150%) scale(2, 2);
+  }
+}
+
+@keyframes scaling-squares-spinner-animation-child-4 {
+  50% {
+    transform: translate(150%, -150%) scale(2, 2);
+  }
+}
+
+/* ##################################################################### */
+/* ############################### NavBar ############################## */
+/* ##################################################################### */
+.navbar {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.514);
+}
+img.navbar-brand.float-left {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  height: 210px;
+}
+.navbar ul li {
+  margin: 0 5px;
+}
+.navbar ul li a {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+.navbar ul li a:hover {
+  color: red;
+}
+.navbar ul li a::after {
+  content: "|";
+  margin: 0 5px;
+}
+@media (max-width: 575px) {
+  .navbar {
+    background-color: var(--main-color);
+    position: relative;
+  }
+  img.navbar-brand.float-left {
+    height: 110px;
+  }
+  .navbar-nav {
+    background: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 33px;
+    text-align: right;
+  }
+  .navbar ul li a::after {
+    content: "";
+    margin: 5px 5px;
+  }
+  .navbar-toggler {
+    border: 1px solid #bb9747c2;
+  }
+}
+/* ##################################################################### */
+/* ############################### HEADER ############################## */
+/* ##################################################################### */
+section.header {
+  margin: 0;
+}
+.header .card-img-overlay {
+  background: rgba(0, 0, 0, 0.49);
+  top: 235px;
+}
+.header .card-img-overlay .card-text {
+  width: 50%;
+  position: absolute;
+  bottom: 100px;
+  text-align: justify;
+  line-height: 2;
+}
+.header .carousel-control-prev-icon,
+.header .carousel-control-next-icon {
+  width: 64px;
+  height: 64px;
+  opacity: 1;
+}
+.header2.slide {
+  border-bottom: 7px solid var(--main-color);
+}
+@media (max-width: 575px) {
+  section.header {
+    margin-top: 12px;
+  }
+  .header .card-img-overlay {
+    top: 69px;
+  }
+  .header .card-img-overlay .card-text {
+    width: 100%;
+    bottom: 0;
+  }
+  .header h2 {
+    font-size: 19px;
+  }
+  .header h4 {
+    font-size: 12px;
+  }
+  .header .carousel-control-prev-icon,
+  .header .carousel-control-next-icon {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+/* ##################################################################### */
+/* ############################### races ############################### */
+/* ##################################################################### */
+.races {
+  padding: 20px;
+  background-image: url(../img/Image\Base\copy.png);
+}
+.races h2,
+.races h3 {
+  text-align: start;
+  padding: 12px;
+}
+.races p {
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+.races h3,
+.races h2 {
+  color: var(--main-color);
+}
+/* ##################################################################### */
+/* ############################### prize ############################### */
+/* ##################################################################### */
+
+.prize {
+  margin: 20px 0;
+}
+.prize .di-back {
+  background-image: url(../img/Image\Base\copy.png);
+  border: 5px solid #d7d7d7;
+}
+.prize .di-back .tany {
+  background-color: #fff;
+  border: 5px solid #d7d7d7;
+  width: 122%;
+  height: 100%;
+  transform: translate(1px, 22px);
+}
+.prize h6,
+.h6 {
+  color: var(--main-color);
+  text-align: justify;
+  padding: 2px 5px;
+  font-weight: 600;
+}
+.prize .di-back .tany .form-control {
+  border: 4px solid #d7d7d7;
+  height: 43px;
+  width: 76%;
+  margin: 0px 7px;
+}
+@media (max-width: 575px) {
+  .prize .di-back .tany {
+    width: 102%;
+    transform: translate(1px, 30px);
+  }
+  .prize .row .row {
+    margin: 20px 0;
+  }
+  .prize .col-8 p {
+    width: 117%;
+    margin-right: -26px;
+  }
+}
+
+/* ##################################################################### */
+/* ############################# Occasions ############################# */
+/* ##################################################################### */
+.Occasions {
+  background: #fff;
+  background-image: url(../img/Image\Base\copy.png);
+}
+
+.Occasions .carousel-item {
+  background: #fff;
+}
+
+section {
+  margin: 50px 0;
+}
+.Occasions h4 {
+  text-align: justify;
+  margin: 32px 0;
+  color: var(--main-color);
+  font-weight: bolder;
+}
+.Occasions p {
+  text-align: justify;
+  font-weight: bold;
+  line-height: 1.7;
+}
+.Occasions .carousel-control-next,
+.Occasions .carousel-control-prev {
+  left: 20px !important;
+  bottom: 10px;
+  background: #c62127;
+  height: 40px;
+  width: 40px;
+}
+.Occasions .carousel-item {
+  padding: 40px 0;
+}
+/* ##################################################################### */
+/* ################################ NEWS ############################### */
+/* ##################################################################### */
+.news .new {
+  border: 5px solid #d7d7d7;
+}
+.news .carousel-control-next,
+.news .carousel-control-prev {
+  display: none;
+}
+.news .carousel-indicators {
+  /* width: 100%; */
+  background: var(--main-color);
+  margin: 0;
+}
+/* ##################################################################### */
+/* ############################### Footer ############################## */
+/* ##################################################################### */
+footer {
+  background: #373737;
+  color: #fff;
+}
+footer ul {
+  list-style: none;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 0;
+}
+footer ul li {
+  display: inline-block;
+  text-align: center;
+  margin: 0 23px;
+}
+footer p.col-md-12 {
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+}
+footer ul li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
